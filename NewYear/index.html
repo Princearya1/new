@@ -5,10 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy New Year, My Love!</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Happy New Year, Babu! 🎉</h1>
+        <div class="subtitle">
+            <span id="typewriter" aria-live="polite"></span>
+        </div>
 
         <div id="countdown" aria-label="Countdown until New Year">
             <div class="timepart"><span id="days">00</span><small>Days</small></div>
@@ -17,12 +21,15 @@
             <div class="timepart"><span id="seconds">00</span><small>Seconds</small></div>
         </div>
 
-        <p class="message">
-            Meri Pallu❤️,<br>
-            Thank you for coming into my life and filling it with warmth, strength and endless love.<br>
-            You make every day brighter — I can't wait to share another beautiful year with you.<br>
-            <span class="heart">❤️</span>
-        </p>
+<p class="message">
+    Meri Pallu❤️,<br>
+    At the beginning, I never knew you would become this important to me—that one day you would mean so much to my heart.<br>
+    Somewhere along the way, you became my comfort, my strength, and the place where my soul feels at peace.<br>
+    Your love fills my life with warmth and meaning, and you make even the simplest days brighter.<br>
+    I can’t wait to share another beautiful year with you, hand in hand.<br>
+    <span class="heart">❤️</span>
+</p>
+
 
         <div class="controls">
             <button id="celebrate">Celebrate 🎆</button>
@@ -41,7 +48,17 @@
                 <img id="slide" alt="Photo slideshow">
                 <button id="next" aria-label="Next photo">›</button>
             </div>
+            <div id="caption" class="hint" aria-live="polite"></div>
         </section>
+
+        <!-- Lightbox for larger image viewing -->
+        <div id="lightbox" class="lightbox" aria-hidden="true">
+            <button class="lightbox-close" aria-label="Close">✕</button>
+            <img class="lightbox-img" alt="Expanded photo">
+        </div>
+
+        <!-- Decorative floating hearts (for bursts and ambient) -->
+        <div class="hearts" aria-hidden="true"></div>
 
         <div class="fireworks">
             <div class="firework"></div>
