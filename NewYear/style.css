@@ -152,9 +152,10 @@ body{background-size:200% 200%;animation:bgShift 12s ease-in-out infinite}
 
 /* PIN overlay */
 #pin-overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.78);z-index:10000}
-#pin-overlay .pin-box{background:linear-gradient(180deg,#fff,#fff);padding:22px;border-radius:12px;width:360px;max-width:92%;text-align:center;box-shadow:0 18px 60px rgba(0,0,0,0.45)}
-#pin-overlay h2{margin:0 0 8px;color:#e17055}
-#pin-input{width:100%;padding:10px 12px;font-size:1.1rem;border-radius:8px;border:1px solid #e6e6e6;text-align:center}
-.pin-actions{margin-top:12px}
-.pin-actions button{background:#e17055;color:#fff;border:0;padding:10px 14px;border-radius:8px;cursor:pointer}
-.pin-msg{color:#d63031;margin-top:8px;min-height:18px}
+#pin-overlay .pin-box{background:linear-gradient(180deg,#fff,#fff);padding:24px 26px;border-radius:12px;width:360px;max-width:92%;text-align:center;box-shadow:0 18px 60px rgba(0,0,0,0.45);display:block}
+#pin-overlay h2{margin:0 0 12px;color:#e17055;font-size:1.4rem}
+#pin-input{width:100%;box-sizing:border-box;max-width:100%;padding:10px 12px;font-size:1.05rem;border-radius:8px;border:1px solid #e6e6e6;text-align:center;display:block;margin:0 auto;outline:none}
+#pin-input:focus{border-color:#e17055;box-shadow:0 6px 18px rgba(225,112,85,0.08);}
+.pin-actions{margin-top:14px;display:flex;justify-content:center}
+.pin-actions button{background:#e17055;color:#fff;border:0;padding:10px 18px;border-radius:8px;cursor:pointer}
+.pin-msg{color:#d63031;margin-top:8px;min-height:18px;text-align:center}
