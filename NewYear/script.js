@@ -30,6 +30,39 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
+// --- Simple PIN gate ---
+const CORRECT_PIN = '01102007';
+const pinOverlay = document.getElementById('pin-overlay');
+const pinInput = document.getElementById('pin-input');
+const pinSubmit = document.getElementById('pin-submit');
+const pinMsg = document.getElementById('pin-msg');
+
+function unlockSite(){
+    if(pinOverlay) pinOverlay.style.display = 'none';
+    const container = document.querySelector('.container');
+    if(container) container.style.display = 'block';
+    try{ sessionStorage.setItem('unlocked','1'); }catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    if(sessionStorage.getItem && sessionStorage.getItem('unlocked') === '1'){
+        if(pinOverlay) pinOverlay.style.display = 'none';
+        const container = document.querySelector('.container'); if(container) container.style.display = 'block';
+        return;
+    }
+    if(pinOverlay && pinInput){
+        pinOverlay.style.display = 'flex';
+        pinInput.focus();
+        if(pinSubmit){
+            pinSubmit.addEventListener('click', ()=>{
+                if(pinInput.value === CORRECT_PIN){ unlockSite(); }
+                else { pinMsg.textContent = 'Incorrect PIN — try again'; pinInput.value = ''; pinInput.focus(); }
+            });
+        }
+        pinInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter'){ e.preventDefault(); if(pinSubmit) pinSubmit.click(); } });
+    }
+});
+
 // --- Simple confetti using canvas ---
 const confettiCanvas = document.getElementById('confetti-canvas');
 const ctx = confettiCanvas.getContext ? confettiCanvas.getContext('2d') : null;
